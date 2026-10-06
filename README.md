@@ -121,12 +121,25 @@ Run the application on an Android emulator or physical device:
 flutter run
 ```
 
-## Testing
-Flutter UI tests are tracked under the `test/` directory (e.g., `test/widget_test.dart`).
-To run standard Flutter tests:
-```bash
-flutter test
-```
+## Sample Data Usage
+The `sample/` directory contains fictional data to demonstrate the system's database structure:
+- `sample_devices.json`: Example device provisioning records.
+- `sample_device_readings.json`: Example time-series raw gas-level telemetry.
+- `sample_device_commands.json`: Example lifecycle of valve commands.
+
+**Important:** These files contain fictional data (e.g., `SENZHUB-DEMO-001`) intended solely for documentation, hackathon evaluation, and demo purposes. They must not be mistaken for production credentials, real device secrets, or real telemetry. Note that `gas_level_ppm` is a raw/sample telemetry terminology matching the schema, and must not be presented as calibrated production gas measurement.
+
+## Testing and Test Cases
+The SENZHUB system is validated across multiple layers including Flutter automated tests, manual functional flows, strict security validation, and hardware integration priority testing.
+
+- Flutter UI tests are tracked under the `test/` directory (e.g., `test/widget_test.dart`).
+- To run standard automated Flutter tests:
+  ```bash
+  flutter test
+  ```
+
+For a comprehensive matrix of all tested scenarios (including PIN/OTP security, local hardware safety priorities, and command lifecycles), please refer to the detailed test document:
+**[TEST_CASES.md](TEST_CASES.md)**
 
 ## Current Implementation Status
 **IMPLEMENTED / WORKING PROTOTYPE:**
